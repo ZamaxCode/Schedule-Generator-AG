@@ -7,6 +7,7 @@ class Individuo:
         self._longitud_gen = longitud_gen
         self._cromosoma = cromosoma
         self._fitness = 0
+        self._materias = []
 
 class AG:
     def __init__(self, cantidad_individuos, alelos, tamano_gen, generaciones, p, problema):
@@ -39,6 +40,7 @@ class AG:
             if generacion % 100 == 0:
                 print("Generación: ", generacion, 'Mejor Histórico: ', self._mejor_historico._cromosoma, self._mejor_historico._fitness)
             generacion += 1
+        return self._mejor_historico._materias
 
     def crearIndividuos(self):
         for i in range(self._cantidad_individuos):
@@ -48,7 +50,7 @@ class AG:
 
     def evaluaIndividuos(self):
         for i in self._individuos:
-            i._fitness = self._problema.f(i._cromosoma)
+            i._fitness, i._materias = self._problema.f(i._cromosoma)
             if i._fitness > self._mejor_historico._fitness:
                 self._mejor_historico = copy.deepcopy(i)
 
