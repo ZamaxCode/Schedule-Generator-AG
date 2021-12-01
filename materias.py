@@ -8,10 +8,9 @@ class Materia:
         self._calificacion = calificacion
 
 class Horario_Max_Creditos:
-    def __init__(self, materias, turno):
+    def __init__(self, materias):
         self._materias = []
         self._materias = materias
-        self._turno = turno
     
     def f(self, cromosoma):
         f = 0
@@ -47,7 +46,6 @@ class Horario_Max_Creditos:
             if len(intersection) > 0:
                 if h_ms[0] == h_matetia[0] or h_ms[1] == h_matetia[1]:
                     return False
-
         return True
     
 class Horario_Mejor_Profesor:
