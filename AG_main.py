@@ -3,7 +3,7 @@ from materias import *
 from AG import *
 
 def main():
-    path = 'D:\\Escritorio\\Proyecto Seminario de Algoritmia\\Plantilla_Horario.xlsx'
+    path = 'C:\\Users\\Dalia\\Schedule-Generator-AG\\Plantilla_Horario.xlsx'
     lista_materias_excel = read_excel(path)
     lista_materias = filtrarTurno('V', lista_materias_excel)
     if len(lista_materias) >= 2:
