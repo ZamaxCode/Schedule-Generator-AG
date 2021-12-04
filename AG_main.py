@@ -1,4 +1,4 @@
-from xlsx_reader import *
+from XLSX_READER import *
 from materias import *
 from AG import *
 
