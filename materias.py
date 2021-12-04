@@ -49,10 +49,9 @@ class Horario_Max_Creditos:
         return True
     
 class Horario_Mejor_Profesor:
-    def __init__(self, materias, turno):
+    def __init__(self, materias):
         self._materias = []
         self._materias = materias
-        self._turno = turno
     
     def f(self, cromosoma):
         f = 0
@@ -95,10 +94,9 @@ class Horario_Mejor_Profesor:
         return True
 
 class Horario_Max_Materias:
-    def __init__(self, materias, turno):
+    def __init__(self, materias):
         self._materias = []
         self._materias = materias
-        self._turno = turno
     
     def f(self, cromosoma):
         materias_seleccionadas = []
