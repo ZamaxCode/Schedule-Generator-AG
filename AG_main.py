@@ -47,6 +47,7 @@ def main(path, turno, preferencia):
         else:
             print('No hay materias sufucientes en la lista para el turno elegido')
 
+    write_excel(materias)
     return materias
 
 def filtrarTurno(turno, lista_materias):

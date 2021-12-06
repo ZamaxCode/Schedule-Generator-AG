@@ -83,6 +83,8 @@ def start():
                                 'Rating del profesor: ' + str(m._calificacion) + '\n' +
                                 '------------------------\n')
             cont += 1
+        
+        logger.insert(END, '\nResultados generados en un excel llamado Horario_Generado.xlsx\n')
         logger.config(state=DISABLED)
 
     else:

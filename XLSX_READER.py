@@ -1,4 +1,5 @@
 import openpyxl
+from openpyxl.workbook.workbook import Workbook
 import materias as mat
 
 def read_excel(path):
@@ -21,3 +22,26 @@ def read_excel(path):
         else:
             break
     return lista_materias
+
+def write_excel(lista_materias):
+    wb = Workbook()
+    ws = wb.active
+    
+    ws.cell(row=1, column=1, value='Materia')
+    ws.cell(row=1, column=2, value='Seccion')
+    ws.cell(row=1, column=3, value='Profesor')
+    ws.cell(row=1, column=4, value='Dias-Horas')
+    ws.cell(row=1, column=5, value='Creditos')
+    ws.cell(row=1, column=6, value='Calificacion')
+
+    i=2
+    for materia in lista_materias:
+        ws.cell(row=i, column=1, value=materia._materia)
+        ws.cell(row=i, column=2, value=materia._seccion)
+        ws.cell(row=i, column=3, value=materia._profesor)
+        ws.cell(row=i, column=4, value=materia._dias_horas)
+        ws.cell(row=i, column=5, value=materia._creditos)
+        ws.cell(row=i, column=6, value=materia._calificacion)
+        i+=1
+
+    wb.save("Horario_Generado.xlsx")
