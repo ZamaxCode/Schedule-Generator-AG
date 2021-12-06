@@ -17,14 +17,12 @@ class Horario_Max_Creditos:
         materias_seleccionadas = []
         for i in range(len(cromosoma)):
             if cromosoma[i]:
-                if self.is_valid(materias_seleccionadas, self._materias[i]):
+                if self.is_valid(materias_seleccionadas, self._materias[i]) and len(materias_seleccionadas)<7:
                     materias_seleccionadas.append(self._materias[i])
                     f+=self._materias[i]._creditos
                 else:
                     if f>0:
                         f-=self._materias[i]._creditos
-                        if f<0:
-                            f=0
         return f, materias_seleccionadas
                 
 
@@ -58,7 +56,7 @@ class Horario_Mejor_Profesor:
         materias_seleccionadas = []
         for i in range(len(cromosoma)):
             if cromosoma[i]:
-                if self.is_valid(materias_seleccionadas, self._materias[i]):
+                if self.is_valid(materias_seleccionadas, self._materias[i]) and len(materias_seleccionadas)<7:
                     materias_seleccionadas.append(self._materias[i])
                     f+=self._materias[i]._calificacion
                 else:
